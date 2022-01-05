@@ -12,12 +12,17 @@ function App() {
   const [emails, setEmails] = useState(initialEmails)
 
   function toggleRead(email) {
-    return !email.read
+    let item = [...emails]
+    email.read = !email.read
+    setEmails(item)
   }
 
   function toggleStar(email) {
-    return !email.starred
+    let item = [...emails]
+    email.starred = !email.starred
+    setEmails(item)
   }
+
 
   return (
     <div className="app">
